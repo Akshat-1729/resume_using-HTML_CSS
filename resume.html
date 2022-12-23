@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My resume</title>
+    <script src="https://kit.fontawesome.com/fb030a63a0.js" crossorigin="anonymous"></script>
+
+    <style>
+        section{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        section:nth-child(2n+1){
+            background-color: white;
+        }
+        section:nth-child(2n){
+            background-color: rgb(227, 224, 224);
+        }
+        body{
+            margin: 0px;
+        }
+        #body-header{
+            height: 90vh;
+            background-image: url(https://wallpaperaccess.com/full/1772051.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .horizontal-list{
+            list-style: none;
+            padding-left: 0%;
+            text-align: center;
+            
+        }
+        #navigation{
+            border: 2px solid rgb(160, 187, 194);
+            margin: 0px 20px;
+            border-radius: 20px;
+        }
+        .horizontal-list li{
+            display: inline-block;
+            margin: 0px 15px 0px 15px;
+            padding: 9px 0px;
+            
+        }
+        .horizontal-list li a{
+            text-decoration: none;
+            font-weight: bold;
+            
+            color:rgb(255, 255, 255);
+            transition: color 0.5s;
+            
+        }
+        .horizontal-list li a:hover{
+            text-decoration:underline;
+            color:rgb(219, 203, 243);
+        }
+        .center{
+            text-align: center;
+        }
+        #my-name{
+            font-size: 3rem;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-style: oblique;
+            letter-spacing: 0.8rem;
+            color: rgb(234 188 97);
+            margin-bottom: 0.5rem;
+        }
+        #name-social{
+            margin-top: 160px;
+        }
+        .social-icons li a i{
+            padding: 10px;
+            font-size: 1rem;
+        }
+        .social-icons li a i:hover{
+            border-radius: 50%;
+            box-shadow: 0px 0px 6px 4px rgba(251, 145, 145, 0.834);
+        }
+        #about{
+            height: auto;
+            width: 100%;
+            position: relative;
+        }
+        #my-image{
+            height: 12rem;
+            width: 12rem;
+            margin: auto;
+            margin-top: -17vh;
+        }
+        #my-image img{
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            
+            box-shadow: 0px 0px 6px 4px rgba(255, 255, 255, 1);
+        }
+        .mb75px{
+            margin-bottom: 75px;
+        }
+        #about-me{
+            text-align: justify;
+            margin: -30px 150px 40px 150px;
+        }
+        .section-heading{
+            width: auto;
+            padding: 30px 20px;
+            font-weight: 400;
+        }
+        .section-heading span{
+            font-size: 40px;
+            color: rgb(37, 37, 155);
+            display: inline-block;
+            padding-top: 10px;
+            margin-right: 0.5rem;
+        }
+
+        /* skills section */
+        .skills-display{
+            width: 35%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            
+
+        }
+        .skill-progress{
+            
+            background-color: rgb(150, 149, 149);
+            width: 100px;
+            height: 25px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            border-radius: 17px;
+            box-shadow: 0px 0px 6px 4px rgba(150, 149, 149, 0.3);
+        }
+        .outline{
+            border-top-left-radius: 17px;
+            border-bottom-left-radius: 17px;
+            height: 25px;
+        }
+        #first{
+            background-color: rgb(56, 56, 252);
+            box-shadow: 0px 0px 6px 4px rgba(56, 56, 252, 0.3);
+            width: 60%;
+        }
+        #second{
+            background-color: rgb(252, 56, 56);
+            box-shadow: 0px 0px 6px 4px rgba(252, 56, 56, 0.3);
+            width: 90%;
+        }
+        #third{
+            background-color: rgb(46, 191, 135);
+            box-shadow: 0px 0px 6px 4px rgba(46, 191, 135, 0.3);
+            width: 70%;
+        }
+        #fourth{
+            background-color: rgb(224, 237, 85);
+            box-shadow: 0px 0px 6px 4px rgba(224, 237, 85, 0.3);
+            width: 45%;
+        }
+        #fifth{
+            background-color: rgb(127, 29, 7);
+            box-shadow: 0px 0px 6px 4px rgba(127, 29, 7, 0.3);
+            width: 30%;
+        }
+        #sixth{
+            background-color: rgb(88, 186, 239);
+            box-shadow: 0px 0px 6px 4px rgba(88, 186, 239, 0.3);
+            width: 55%;
+            border-top-right-radius: 2px;
+            border-bottom-right-radius: 2px;
+        }
+        #seventh{
+            background-color: rgb(36, 246, 13);
+            box-shadow: 0px 0px 6px 4px rgba(36, 246, 13, 0.3);
+            width: 69%;
+        }
+        #eighth{
+            background-color: rgb(84, 53, 103);
+            box-shadow: 0px 0px 6px 4px rgba(84, 53, 103, 0.3);
+            width: 49%;
+        }
+        .skill-lang{
+            font-weight: bold;
+            color: whitesmoke;
+            padding-left: 9px;
+            padding-top: 7px;
+            
+        }
+        .portfolio{
+            width: 85%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .certificates img{
+            height: 250px;
+            width: 250px;
+            margin: 15px 15px;
+            border:2px solid black;
+            padding: 9px 9px;
+            box-shadow: 0px 0px 6px 4px rgba(197, 153, 231, 0.844);
+        }
+        .certificates img:hover{
+            box-shadow: 0px 0px 6px 4px rgba(165, 68, 239, 0.9);
+        }
+        #contact{
+            height: auto;
+            width: auto;
+            background: linear-gradient(60deg,rgba(1, 36, 134, 0.917),rgb(132, 17, 233));
+        }
+        #contact-heading span{
+            color: azure;
+        }
+        .contact-info{
+            width: 80%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            
+        }
+        .contact-form{
+            width: 380px;
+            margin-bottom: 50px;
+            
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1.5px solid whitesmoke;
+            background: none;
+            padding-bottom: 9px;
+            outline: none;
+            caret-color: white;
+            color: beige;
+            text-decoration: solid;
+            
+        }
+        #message-button{
+            margin-bottom: 50px;
+            margin-left: 120px;
+            height: 35px;
+            width: 170px;
+            background: none;
+            border: 2px solid whitesmoke;
+            color: aliceblue;
+            font-weight: 490;
+            letter-spacing: 1.5px;
+            padding: 8px;
+        }
+        #message-button:hover{
+            border-color: rgb(215, 215, 244);
+            box-shadow: 0px 0px 6px 4px rgba(238, 170, 211, 0.844);
+            font-weight: 550;
+        }
+        #my-detail{
+            margin-right: 30px;
+            margin-top: -40px;
+            
+        }
+        #my-detail h2{
+            color: azure;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        #my-detail p{
+            width: 394px;
+            color: rgb(178, 174, 174);
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .personal-info{
+            color: rgb(255, 252, 252);
+            
+        }
+        .dtls{
+            margin-left: 15px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(236, 229, 229);
+        }
+        .a{
+            padding: 12px;
+        }
+        .last-line{
+            margin-top: 20px;
+            width: 500px;
+            border: 1.9px solid whitesmoke;
+            border-radius: 30px;
+        }
+        .last-line li a i{
+            padding: 4px 6px;
+        }
+        .timeline{
+            position: relative;
+            width: 75%;
+            
+            margin-bottom: 20px;
+        }
+       
+        .timeline-boxes{
+            position: relative;
+            margin: 5px;
+            width: 40%;
+            left: 5%;
+            min-height: 150px;
+            
+        }
+        .timeline-boxes:nth-child(2n){
+            left: 53%;
+        }
+        .timeline-divider{
+            position: absolute;
+            height: 75%;
+            width: 0;
+            border: 2px dashed rgb(114, 72, 198);
+            top: 10%;
+            left: 50%;
+        }
+        .timeline-traveller{
+            position: sticky;
+            top: 20%;
+            transform: rotate(90deg);
+        }
+        .headings{
+            text-align: right;
+            margin-top: -1px;
+            color: rgb(44, 31, 163);
+            font-weight: bold;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        .icons{
+            color: rgb(67, 20, 85);
+            margin-right: 10px;
+            
+            
+        }
+        .timeline-boxes h4{
+            text-align: right;
+            margin-top: -10px;
+            color: rgb(242, 140, 51);
+        }
+        .timeline-boxes h5{
+            text-align: right;
+            margin-top: -15px;
+            color: rgb(98, 93, 89);
+        }
+        .timeline-boxes p{
+            text-align: justify;
+        }
+
+    </style>
+</head>
+<body>
+    <header id="body-header">
+        <nav>
+            <ul class="horizontal-list" id="navigation">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#about">About</a>
+                </li>
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+                <li>
+                    <a href="#portfolio">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#education">Education</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="name-social">
+            <div class="center">
+                <h1 id="my-name">AKSHAT KUMAR</h1>
+            </div>
+            <div>
+                <ul class="center horizontal-list social-icons" >
+                    <li>
+                        <a href="https://www.linkedin.com/in/akshat-kumar-209300203/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.hackerrank.com/dashboard" target="_blank"><i class="fa-brands fa-hackerrank"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/akshat_kumar1729/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Akshat-1729" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="about">
+            <div id="my-image">
+                <img src="ak.jpeg" alt="">
+            </div>
+            <h1 class="section-heading mb75px">
+                <span>
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </span>
+                <span>ABOUT ME</span>
+            </h1>
+            <p id="about-me">
+                i am a acha sa seedha sa boy who is struggling in symbiosis. i have a life experience of 19 years. i love playing football, but my friends dont let me play, i give gandi gandi gaalis unko uss time(cant be imagined). i am a morning person, i sleep every morning. i sleep a lot. sometimes its good sometimesit is shit. i can put a smile on people's face , but then people call me weird for my harkats, i say fuck them.  ab kuch smjh ni aa rha to gaane llikh rha. kal tujhko dekha tha maine apne aangan mei, jaise keh rhee thi tummujhe bandh lo bandhan mei. ye kaisa rishta hai? ye kaise sapne hai? begaane hoke bhi kyu lagte apne hai?
+            </p>
+        </section>
+
+        <section id="skills">
+            <h1 class="section-heading mb75px">
+                <span>
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                </span>
+                <span>SKILLS</span>
+            </h1>
+            <div class="skills-display">
+                <div class="skill-progress">
+                    <div id="first" class="outline">
+                        <span class="skill-lang">C++</span>
+                    </div>
+                </div>
+                <div class="skill-progress">
+                    <div id="second" class="outline">
+                        <span class="skill-lang">Python</span>
+                    </div>
+                </div>
+                <div class="skill-progress">
+                    <div id="third" class="outline">
+                        <span class="skill-lang">HTML</span>
+                    </div>
+                </div>
+                <div class="skill-progress">
+                    <div id="fourth" class="outline">
+                        <span class="skill-lang">Java</span>
+                    </div>
+                </div>
+                <div class="skill-progress">
+                    <div id="fifth" class="outline">
+                        <span class="skill-lang">J.S</span>
+                    </div>
+                </div>
+                <div class="skill-progress">
+                    <div id="sixth" class="outline">
+                        <span class="skill-lang">CSS</span>
+                    </div>
+                </div>
+                <div class="skill-progress">
+                    <div id="seventh" class="outline">
+                        <span class="skill-lang">C</span>
+                    </div>
+                </div>
+                <div class="skill-progress">
+                    <div id="eighth" class="outline">
+                        <span class="skill-lang">Prolog</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="portfolio">
+            <h1 class="section-heading mb75px">
+                <span>
+                    <i class="fa-regular fa-rectangle-list"></i>
+                </span>
+                <span>PORTFOLIO</span>
+            </h1>
+            <div class="portfolio">
+                <div class="certificates">
+                    <img src="datasc cer.png" alt="">
+                </div>
+                <div class="certificates">
+                    <img src="hack cer.png" alt="">
+                </div>
+                <div class="certificates">
+                    <img src="maths cer.png" alt="">
+                </div>
+                <div class="certificates">
+                    <img src="python cer.png" alt="">
+                </div>
+                <div class="certificates">
+                    <img src="python2 cer.png" alt="">
+                </div>
+                <div class="certificates">
+                    <img src="agile cer.png" alt="">
+                </div>
+                <div class="certificates">
+                    <img src="vois cer.png" alt="">
+                </div>
+            </div>
+        </section>
+        <section id="education">
+            <h1 class="section-heading mb75px">
+                <span>
+                    <i class="fa-solid fa-briefcase"></i>
+                </span>
+                <span>EDUCATION</span>
+            </h1>
+            <div class="timeline">
+                <div class="timeline-boxes">
+                    <h3 class="headings">
+                        <span class="icons"><i class="fa-solid fa-school"></i></span>
+                        <span>SCHOOLING</span>
+                    </h3>
+                    <h4>
+                        Kendriya Vidhyalaya Rajgir
+                    </h4>
+                    <h5>
+                        Year: 2008-2011
+                    </h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dolorum possimus voluptas dicta quibusdam sapiente necessitatibus. Voluptatum laboriosam suscipit omnis. Laudantium, nisi vel. Labore sunt reiciendis dolore officia delectus veritatis?</p>
+                </div>
+                <div class="timeline-boxes">
+                    <h3 class="headings">
+                        <span class="icons"><i class="fa-solid fa-school"></i></span>
+                        <span>SCHOOLING</span>
+                    </h3>
+                    <h4>
+                        Kendriya Vidhyalaya Aruvankadu
+                    </h4>
+                    <h5>
+                        Year: 2011-2016
+                    </h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dolorum possimus voluptas dicta quibusdam sapiente necessitatibus. Voluptatum laboriosam suscipit omnis. Laudantium, nisi vel. Labore sunt reiciendis dolore officia delectus veritatis?</p>
+                </div>
+                <div class="timeline-boxes">
+                    <h3 class="headings">
+                        <span class="icons"><i class="fa-solid fa-school"></i></span>
+                        <span>SCHOOLING</span>
+                    </h3>
+                    <h4>
+                        Kendriya Vidhyalaya Jabalpur
+                    </h4>
+                    <h5>
+                        Year: 20016-2021
+                    </h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dolorum possimus voluptas dicta quibusdam sapiente necessitatibus. Voluptatum laboriosam suscipit omnis. Laudantium, nisi vel. Labore sunt reiciendis dolore officia delectus veritatis?</p>
+                </div>
+                <div class="timeline-boxes">
+                    <h3 class="headings left">
+                        <span class="icons"><i class="fa-solid fa-building-columns"></i></span>
+                        <span>COLLEGE</span>
+                        
+                    </h3>
+                    <h4>
+                        Symmbiosis Institute of Technology
+                    </h4>
+                    <h5>
+                        Year: 2021-Present
+                    </h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed dolorum possimus voluptas dicta quibusdam sapiente necessitatibus. Voluptatum laboriosam suscipit omnis. Laudantium, nisi vel. Labore sunt reiciendis dolore officia delectus veritatis?</p>
+                </div>
+                <div class="timeline-divider">
+                    <div class="timeline-traveller">
+                        <i class="fa-solid fa-plane"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <h1 class="section-heading mb75px" id="contact-heading">
+                <span>
+                    <i class="fa-solid fa-address-card"></i>
+                </span>
+                <span>CONTACT</span>
+            </h1>
+            <div class="contact-info">
+                <div id="form">
+                    <input type="text" name="name" id="name" class="contact-form" placeholder="Your Name"><br>
+                    <input type="text" name="email" id="email" class="contact-form" placeholder="Your Email"><br>
+                    <input type="text" name="message" id="message" class="contact-form" placeholder="Message"><br>
+                    <input type="button" value="SEND MESSAGE" id="message-button" onclick="msg()">
+                    <script>
+                        function msg() {
+                          alert("Message Sent!!!");
+                        }
+                    </script>
+                </div>
+                <div id="my-detail">
+                    <h2>
+                        Get in touch
+                    </h2>
+                    <p>
+                        OO zara zara touch me touch me touch me oo zara zara kiss me kiss me kiss me zara zara hold me hold me hold me.
+                    </p>
+                    <h2>My address</h2>
+                    <div class="personal-info">
+                        <div class="a">
+                            <span><i class="fa-solid fa-location-dot"></i></span>
+                            <span class="dtls">Pune, India</span>
+                            
+                        </div>
+                        <div class="a">
+                            <span><i class="fa-regular fa-envelope"></i></span>
+                            <span class="dtls">akshatkumar7689@gmail.com</span>
+
+                        </div>
+                        <div class="a">
+                            <span><i class="fa-solid fa-mobile-screen"></i></span>
+                            <span class="dtls">8269011626</span>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div>
+                <ul class="center horizontal-list social-icons last-line">
+                    <li>
+                        <a href="https://www.linkedin.com/in/akshat-kumar-209300203/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.hackerrank.com/dashboard" target="_blank"><i class="fa-brands fa-hackerrank"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/akshat_kumar1729/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Akshat-1729" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
